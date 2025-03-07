@@ -40,7 +40,13 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Terraform Format
-      run: terraform fmt -check -recursive
+      run: |
+        terraform fmt -recursive
+        git config user.name nickngwa
+        git config user.email nick_ngwa@yahoo.com
+        git add .
+        git diff --staged --quiet || git commit -m "Auto-format Terraform files"
+        git push
 
     - name: Terraform Init
       run: terraform init
