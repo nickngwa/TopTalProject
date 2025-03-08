@@ -24,7 +24,7 @@ web_port = 3000
 api_port = 3000
 
 # Database Configuration (sensitive - consider using AWS SSM Parameter Store instead)
-db_name              = "ngwa-node3tier"
-db_username          = "dbadmin"  # Replace with secure username
+# db_name              = "ngwa-node3tier"
+# db_username          = "dbadmin"  # Replace with secure username
 #db_password          = "YourSecurePassword123!"  
-db_instance_class    = "db.t3.small"  # More resources for production
+# db_instance_class    = "db.t3.small"  # More resources for production
