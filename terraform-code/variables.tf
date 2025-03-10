@@ -65,22 +65,22 @@ variable "api_port" {
 }
 
 # Database variables
-#variable "db_name" {
- # description = "Database name"
-  #default     = "node3tier"
-#}
+variable "db_name" {
+ description = "Database name"
+  default     = "node3tier"
+}
 
-#variable "db_username" {
- # description = "Database username"
- # sensitive   = true
-#}
+variable "db_username" {
+ description = "Database username"
+ sensitive   = true
+}
 
-#variable "db_password" {
- # description = "Database password"
-  #sensitive   = true
-#}
+variable "db_password" {
+ description = "Database password"
+  sensitive   = true
+}
 
-#variable "db_instance_class" {
- # description = "RDS instance class"
- # default     = "db.t3.micro"
-#}
+variable "db_instance_class" {
+ description = "RDS instance class"
+ default     = "db.t3.micro"
+}
