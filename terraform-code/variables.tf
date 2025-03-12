@@ -59,10 +59,10 @@ variable "web_port" {
   default     = 3000
 }
 
-variable "web_security_group_ids" {
-  description = "List of security group IDs allowed to access the API"
-  type        = list(string)
-}
+#variable "web_security_group_ids" {
+ # description = "List of security group IDs allowed to access the API"
+  #type        = list(string)
+#}
 
 variable "api_port" {
   description = "API application port"
