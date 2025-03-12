@@ -60,6 +60,15 @@ module "web_tier" {
   api_endpoint = module.api_tier.api_endpoint
 }
 
+module "cdn" {
+  source = "./modules/cdn"
+
+  project_name       = var.project_name
+  web_lb_domain_name = module.web_tier.web_endpoint
+  web_lb_origin_id   = module.web_tier.lb_arn
+  price_class        = var.cloudfront_price_class
+}
+
 # Finally, add a security group rule to allow web tier to access API tier
 resource "aws_security_group_rule" "api_from_web" {
   type                     = "ingress"

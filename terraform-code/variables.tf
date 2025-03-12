@@ -59,6 +59,11 @@ variable "web_port" {
   default     = 3000
 }
 
+variable "web_security_group_ids" {
+  description = "List of security group IDs allowed to access the API"
+  type        = list(string)
+}
+
 variable "api_port" {
   description = "API application port"
   default     = 3000
@@ -83,4 +88,10 @@ variable "db_password" {
 variable "instance_class" {
   description = "RDS instance class"
   default     = "db.t3.micro"
+}
+
+variable "cloudfront_price_class" {
+  description = "CloudFront price class controlling which edge locations to use"
+  type        = string
+  default     = "PriceClass_100" # Use only US, Canada, Europe edge locations
 }
