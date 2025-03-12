@@ -14,9 +14,9 @@ availability_zones   = ["us-east-1a", "us-east-1b"]
 public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
 private_subnet_cidrs = ["10.0.11.0/24", "10.0.12.0/24"]
 # EC2 Configuration
-ami_id            = "ami-05b10e08d247fb927"  # Update with the latest Amazon Linux 2 AMI
-key_name          = "node-3tier-key"  # Replace with your SSH key name
-web_instance_type = "t3.small"  # More resources for production
+ami_id            = "ami-05b10e08d247fb927" # Update with the latest Amazon Linux 2 AMI
+key_name          = "node-3tier-key"        # Replace with your SSH key name
+web_instance_type = "t3.small"              # More resources for production
 api_instance_type = "t3.small"
 
 # Application Configuration
