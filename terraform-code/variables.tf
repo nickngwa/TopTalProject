@@ -80,7 +80,7 @@ variable "db_password" {
   sensitive   = true
 }
 
-variable "db_instance_class" {
+variable "instance_class" {
   description = "RDS instance class"
   default     = "db.t3.micro"
 }
