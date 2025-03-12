@@ -45,12 +45,12 @@ jobs:
     - name: Terraform Validate
       run: terraform validate
 
-    #- name: Create Terraform Variables
-     # run: |
-      #  cat > terraform.tfvars << EOF
-       # db_username = "${{ secrets.DB_USERNAME }}"
-        #db_password = "${{ secrets.DB_PASSWORD }}"
-        #EOF
+    - name: Create Terraform Variables
+      run: |
+        cat > terraform.tfvars << EOF
+        db_username = "${{ secrets.DB_USERNAME }}"
+        db_password = "${{ secrets.DB_PASSWORD }}"
+        EOF
 
     - name: Terraform Plan
       id: plan
