@@ -4,17 +4,17 @@
 set -e
 
 # Update system packages to latest versions
-yum update -y
+sudo yum update -y
 
 # Install Node.js repository and Node.js
-curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-yum install -y nodejs git
+curl -sL https://rpm.nodesource.com/setup_20.x | bash -
+sudo yum install -y nodejs git
 
 # Create application directory and clone the repository
-mkdir -p /opt/web-app
+sudo mkdir -p /opt/web-app
 cd /opt/web-app
-git clone https://github.com/nickngwa/TopTalProject.git .
-cd ./web
+sudo git clone https://github.com/nickngwa/TopTalProject.git .
+cd web
 
 # Install Node.js dependencies
 npm install
