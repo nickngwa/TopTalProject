@@ -13,6 +13,7 @@ output "api_endpoint" {
   value       = module.api_tier.api_endpoint
 }
 
+
 output "cdn_domain_name" {
   description = "CloudFront CDN domain name"
   value       = module.cdn.cloudfront_domain_name
