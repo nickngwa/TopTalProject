@@ -7,7 +7,7 @@ set -e
 sudo yum update -y
 
 # Install Node.js repository and Node.js
-curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+curl -sL https://rpm.nodesource.com/setup_20.x | bash -
 sudo yum install -y nodejs git
 
 # Create application directory and clone the repository
