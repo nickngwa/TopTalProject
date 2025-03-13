@@ -20,39 +20,10 @@ cd api
 sudo npm install
 
 # Create environment variables file for the application
-cat > .env <<EOF
-PORT=${app_port}
-DB=${db_name}
-DBUSER=${db_user}
-DBPASS=${db_pass}
-DBHOST=${db_host}
-DBPORT=${db_port}
-NODE_ENV=${node_env}
-EOF
+sudo bash -c 'echo -e "PORT=${app_port}\nDB=${db_name}\nDBUSER=${db_user}\nDBPASS=${db_pass}\nDBHOST=${db_host}\nDBPORT=${db_port}\nNODE_ENV=${node_env}" > .env'
 
 # Create systemd service file for automatic startup and management
-cat > /etc/systemd/system/api-app.service <<EOF
-[Unit]
-Description=Node.js API Application
-After=network.target
-
-[Service]
-Environment=PORT=${app_port}
-Environment=DB=${db_name}
-Environment=DBUSER=${db_user}
-Environment=DBPASS=${db_pass}
-Environment=DBHOST=${db_host}
-Environment=DBPORT=${db_port}
-Environment=NODE_ENV=${node_env}
-Type=simple
-User=ec2-user
-WorkingDirectory=/opt/api-app/api
-ExecStart=/usr/bin/npm start
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-EOF
+sudo bash -c 'echo -e "[Unit]\nDescription=Node.js API Application\nAfter=network.target\n\n[Service]\nEnvironment=PORT=${app_port}\nEnvironment=DB=${db_name}\nEnvironment=DBUSER=${db_user}\nEnvironment=DBPASS=${db_pass}\nEnvironment=DBHOST=${db_host}\nEnvironment=DBPORT=${db_port}\nEnvironment=NODE_ENV=${node_env}\nType=simple\nUser=ec2-user\nWorkingDirectory=/opt/api-app/api\nExecStart=/usr/bin/npm start\nRestart=always\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/api-app.service'
 
 # Enable and start the service
 systemctl daemon-reload
